@@ -1,0 +1,22 @@
+gametitle=Ridge Racer V Arcade Battle RRV2 Ver.B (NM00001)
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco23444
+description=Widescreen Hack
+
+//Chase cam
+patch=1,EE,003E384C,word,43C6C000 // 44048000 - both fov, bumper camera
+patch=1,EE,003E384C,word,4396C000 // 44048000 - both fov, chase camera (*) 
+patch=1,EE,003E42EC,word,3F1D0364 // 3EEB851F - vertical FOV
+
+//intro
+patch=1,EE,003E4488,word,3F199999 // 3F4CCCCD - horizontal FOV
+
+//(*) improved chase cam that shows the whole car as in other Ridge Racer games, instead of only the upper half
+//(*) replace 43960000 by 43C6C000 for the original chase cam
+
+[No-Interlacing]
+author=Franco23444
+description=Attempts to disable interlaced offset rendering.
+gsinterlacemode=1
+patch=1,EE,0023C0B8,word,24020000

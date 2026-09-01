@@ -1,0 +1,9 @@
+gametitle=Wangan Midnight Export (NM00008)
+
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco23444
+description=Widescreen Hack
+patch=1,EE,0016AB84,word,3C073F40
+patch=1,EE,001C7B3C,word,3C033F40
+

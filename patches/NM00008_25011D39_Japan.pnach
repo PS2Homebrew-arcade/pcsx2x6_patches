@@ -1,0 +1,8 @@
+gametitle=Wangan Midnight Japan (NM00008)
+
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco23444
+description=Widescreen Hack
+patch=1,EE,0016A7D4,word,3C073F40
+patch=1,EE,001BD04C,word,3C033F40

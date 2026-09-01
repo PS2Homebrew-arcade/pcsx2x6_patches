@@ -1,0 +1,8 @@
+gametitle=Wangan Midnight R (NM00008)
+
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco23444
+description=Widescreen Hack
+patch=1,EE,00170734,word,3C073F40
+patch=1,EE,001C3BAC,word,3C033F40

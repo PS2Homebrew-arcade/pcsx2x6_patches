@@ -1,0 +1,17 @@
+gametitle=Bloody Roar 3 (NM00002)
+
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco23444
+description=Widescreen Hack
+
+//Gameplay 16:9
+patch=1,EE,001E4D9C,word,3C013F40 //00000000 (Increases hor. axis)
+patch=1,EE,001E4DA0,word,44810000 //00000000
+patch=1,EE,001E4DA8,word,4600C602 //00000000
+
+[No-Interlacing]
+description=Attempts to disable interlaced offset rendering.
+gsinterlacemode=1
+author=Franco23444
+patch=1,EE,001DC60C,word,00000000

@@ -1,0 +1,6 @@
+gametitle=Soul Calibur III Arcade Edition (NM00031)
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco234444 (Found by smb123w64gb & zephixX)
+description=Widescreen Hack
+patch=1,EE,0393A50,extended,00000001

@@ -1,0 +1,8 @@
+gametitle=Super Dragon Ball Z (NM00027)
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=Franco23444
+description=Widescreen Hack
+
+//Widescreen hack 16:9
+patch=1,EE,0026691C,word,3C023F10 //3C023F40
