@@ -1,0 +1,27 @@
+gametitle=Time Crisis 4 TSF1002-NA-A (NM00032)
+
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=m33ts4k0z
+description=Widescreen Hack (Hor+), with gun aim across the whole 16:9 screen
+
+//3D: horizontal scale of the screen setup 1.0 -> 0.75; 2D layers stretch
+patch=1,EE,00426D6C,word,3F400000 // 3F800000
+
+//Gun: 0x27BF80 scales the shot to -1..1 as if 4:3 and the shot then misses everything past the
+//4:3 edge; the half-width becomes 3/8 of the width instead of 1/2, so shots reach the 16:9 sides
+patch=1,EE,0027C024,word,00031083
+patch=1,EE,0027C028,word,000308C3
+patch=1,EE,0027C02C,word,00411021
+patch=1,EE,0027C030,word,00000000
+
+[Gun off-screen fix]
+author=m33ts4k0z
+description=The gun at the left or right screen edge counts as off-screen, so the multi-screen side switch works with gun inputs that never report "no position" off-screen (TeknoParrot)
+
+//The gun state update (0x21EC6C) counts the gun as off-screen only when the I/O reports x or y 0xFFFF;
+//the side (off-screen left/right) comes from the last on-screen x. TeknoParrot keeps the gun at x 0
+//past either edge instead, so the side switch never came. Raw x 0 now counts as off-screen too.
+patch=1,EE,0021EC70,word,10600005 // 3404FFFF
+patch=1,EE,0021EC74,word,3404FFFF // 10640004
+patch=1,EE,0021EC78,word,10640003 // 00000000

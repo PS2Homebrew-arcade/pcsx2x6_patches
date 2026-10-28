@@ -1,0 +1,19 @@
+gametitle=Time Crisis 3 TST2 Ver.A (NM00012)
+
+[Widescreen 16:9]
+gsaspectratio=16:9
+author=m33ts4k0z
+description=Widescreen Hack (Hor+), with gun aim across the whole 16:9 screen
+
+//3D: horizontal scale of the screen setup 1.0 -> 0.75; 2D layers stretch
+patch=1,EE,002D302C,word,3F400000 // 3F800000
+
+//Gun: the player update (0x15B3EC) scales the shot to -1..1 as if 4:3 and the shot then misses
+//everything past the 4:3 edge; it now divides by 3/4 of the half-width, so shots reach the 16:9 sides
+patch=1,EE,0015B400,word,00022083
+patch=1,EE,0015B408,word,000210C3
+patch=1,EE,0015B40C,word,02232823
+patch=1,EE,0015B410,word,00822021
+patch=1,EE,0015B414,word,44850800
+patch=1,EE,0015B418,word,44840000
+patch=1,EE,0015B420,word,3C033F33
